@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-  // test comment for git hub
     public function checkout(){
         $cartItem = cart::with('product')->where('user_id',Auth::id());
         $cartItem = $cartItem->get();
