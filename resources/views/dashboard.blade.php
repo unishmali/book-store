@@ -1,80 +1,36 @@
-<x-app-layout>
-    <!-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-500 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard !') }}
-        </h2>
-    </x-slot>
+<x-app-layout >
+   
   
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-                <div class=" ">
-                    <div class="p-6 rounded-t-lg bg-white flex justify-between items-center">
-                        <div class="col-6">
-                            <div class="p-2 rounded-md bg-red-300">
-                                
-                            </div>
-</div>
-                        <div class="col-6 text-end">
-                            <p class="text-muted mb-0 text-truncate">Total Orders</p>
-                            <h3 class="text-dark mt-1 mb-0">13, 647</h3>
-                        </div> 
-                    </div> 
-                    <div class="p-2 rounded-b-lg bg-slate-100">
-                        <p class="text-sm">View More</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="avatar-md bg-soft-primary rounded">
-                                <iconify-icon icon="solar:cart-5-bold-duotone" class="avatar-title fs-32 text-primary"></iconify-icon>
-                            </div>
-                        </div> 
-                        <div class="col-6 text-end">
-                            <p class="text-muted mb-0 text-truncate">Total Orders</p>
-                            <h3 class="text-dark mt-1 mb-0">13, 647</h3>
-                        </div> 
-                    </div>
-                </div>
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-            </div>
-        </div>
-    </div> -->
-  
-    <div class="page-content ">
+    <div class="page-content pt-12 ">
  
         <!-- Start Container Fluid -->
         <div class="container-fluid">
 
             <!-- Start here.... -->
-            <div class="row">
+            <div class="row pt-16">
                 <div class="w-full">
                     <div class="row">
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <div class="alert alert-primary text-truncate mb-3" role="alert">
                                 Welcome To BookLand Nepal !!
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-6">
                             <div class="card overflow-hidden">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="avatar-md bg-soft-primary rounded flex items-center justify-center">
-                                                <i class="fa fa-book "></i>
+                                            <div class="avatar-md bg-orange-300 rounded flex items-center justify-center">
+                                                <i class="fa fa-book text-slate-700 text-2xl  "></i>
                                             </div>
                                         </div> <!-- end col -->
                                         <div class="col-6 text-end">
                                             <p class="text-muted mb-0 text-truncate">Total Books</p>
-                                            <h3 class="text-dark mt-1 mb-0">13, 647</h3>
+                                            @php
+                                            $totalbooks = \App\Models\product::count();
+                                            @endphp
+                                            <h3 class="text-dark mt-1 mb-0">{{$totalbooks}}</h3>
                                         </div> <!-- end col -->
                                     </div> <!-- end row-->
                                 </div> <!-- end card body -->
@@ -94,8 +50,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                        <div class="avatar-md bg-soft-primary rounded flex items-center justify-center">
-                                                <i class="fa fa-file "></i>
+                                        <div class="avatar-md bg-orange-300 rounded flex items-center justify-center ">
+                                                <i class="fa fa-file   text-slate-700 text-2xl"></i>
                                             </div>
                                         </div> <!-- end col -->
                                         <div class="col-6 text-end">
@@ -105,12 +61,12 @@
                                     </div> <!-- end row-->
                                 </div> <!-- end card body -->
                                 <div class="card-footer py-2 bg-light bg-opacity-50">
-                                    <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex   align-items-center justify-content-between">
                                         <div>
                                             <span class="text-success"> <i class="bx bxs-up-arrow fs-12"></i> 8.1%</span>
                                             <span class="text-muted ms-1 fs-12">Last Month</span>
                                         </div>
-                                        <a href="#!" class="text-reset fw-semibold fs-12">View More</a>
+                                        <a href="/category/index" class="text-reset fw-semibold fs-12">View More</a>
                                     </div>
                                 </div> <!-- end card body -->
                             </div> <!-- end card -->
@@ -120,13 +76,16 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="avatar-md bg-soft-primary rounded flex items-center justify-center">
-                                                <i class="fa fa-user"></i>
+                                            <div class="avatar-md bg-orange-300 rounded flex items-center justify-center">
+                                                <i class="fa fa-user text-slate-700 text-2xl"></i>
                                             </div>
                                         </div> <!-- end col -->
                                         <div class="col-6 text-end">
                                             <p class="text-muted mb-0 text-truncate">Users</p>
-                                            <h3 class="text-dark mt-1 mb-0">976</h3>
+                                            @php
+                                            $totalusers = \App\Models\User::count();
+                                            @endphp
+                                            <h3 class="text-dark mt-1 mb-0">{{$totalusers}}</h3>
                                         </div> <!-- end col -->
                                     </div> <!-- end row-->
                                 </div> <!-- end card body -->
@@ -146,8 +105,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="avatar-md bg-soft-primary rounded flex justify-center items-center">
-                                                <i class="fa fa-bell"></i>
+                                            <div class="avatar-md bg-orange-300 rounded flex justify-center items-center">
+                                                <i class="fa fa-bell text-slate-700 text-2xl"></i>
                                             </div>
                                         </div> <!-- end col -->
                                         <div class="col-6 text-end">
@@ -162,7 +121,7 @@
                                             <span class="text-danger"> <i class="bx bxs-down-arrow fs-12"></i> 10.6%</span>
                                             <span class="text-muted ms-1 fs-12">Last Month</span>
                                         </div>
-                                        <a href="#!" class="text-reset fw-semibold fs-12">View More</a>
+                                        <a href="#!" class="text-reset fw-semibold fs-12 hover:scale-110 scale-in-out">View More</a>
                                     </div>
                                 </div> <!-- end card body -->
                             </div> <!-- end card -->
@@ -177,7 +136,7 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Conversions</h5>
+                            <h5 class="card-title">Sales</h5>
                             <div id="conversions" class="apex-charts mb-2 mt-n2"></div>
                             <div class="row text-center">
                                 <div class="col-6">
@@ -196,7 +155,7 @@
                     </div>
                 </div> <!-- end left chart card -->
 
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Sessions by Country</h5>
@@ -206,20 +165,20 @@
                                 <div class="col-6">
                                     <p class="text-muted mb-2">This Week</p>
                                     <h3 class="text-dark mb-3">23.5k</h3>
-                                </div> <!-- end col -->
+                                </div> 
                                 <div class="col-6">
                                     <p class="text-muted mb-2">Last Week</p>
                                     <h3 class="text-dark mb-3">41.05k</h3>
-                                </div> <!-- end col -->
-                            </div> <!-- end row -->
+                                </div> 
+                            </div>
                         </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
+                    </div>
+                </div> -->
 
-                <div class="col-lg-4">
+                <div class="col-lg-8">
                     <div class="card card-height-100">
                         <div class="card-header d-flex align-items-center justify-content-between gap-2">
-                            <h4 class="card-title flex-grow-1">Top Pages</h4>
+                            <h4 class="card-title flex-grow-1">Top Sale Books</h4>
 
                             <a href="#" class="btn btn-sm btn-soft-primary">View All</a>
                         </div>

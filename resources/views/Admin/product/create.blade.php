@@ -94,12 +94,14 @@
                                 <label for="product-brand" class="form-label">Add to Feature</label>
                                 <select name="feature" id="" style="padding:9px; line-height:1rem;" class="w-full bg-transparent border  rounded-lg ">
                                     <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
                                 </select>
                             </div>
                             <div class="">
                                 <label for="product-brand" class="form-label">Add to Bestselling</label>
                                 <select name="bestselling" id="" style="padding:9px; line-height:1rem;" class="w-full bg-transparent border  rounded-lg ">
                                     <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
                                 </select>
                             </div>
                         </div>
@@ -149,23 +151,23 @@
             <div class="card-header">
                 <h4 class="card-title">Pricing Details</h4>
             </div>
-            <div class="card-body px-12">
+            <div class="card-body " >
                 <div class="row">
                     <div class="col-lg-4">
 
                         <label for="product-price" class="form-label">Price</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text fs-20"><i class='bx bx-dollar'></i></span>
+                            <span class="input-group-text fs-20"><i class='fa fa-dollar'></i></span>
                             <input name="price" type="number" id="product-price" class="form-control" placeholder="000">
                         </div>
 
                     </div>
                     <div class="col-lg-4">
 
-                        <label for="product-discount" class="form-label">Compare Price</label>
+                        <label for="product-discount" class="form-label">Discount</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text fs-20"><i class='bx bxs-discount'></i></span>
-                            <input name="compare_price" type="number" id="product-discount" class="form-control" placeholder="000">
+                            <span class="input-group-text fs-20"><i class='fa fa-percentage'></i></span>
+                            <input name="discount" type="number" id="product-discount" class="form-control" placeholder="000">
                         </div>
 
                     </div>

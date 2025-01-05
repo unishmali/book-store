@@ -77,7 +77,7 @@
 						<tbody>
 							<tr>
 								<td>Order Subtotal</td>
-								<td>$ {{$subTotal}}</td>
+								<td>$ {{$subTotal}}.00</td>
 							</tr>
 							<tr>
 								<td>Shipping</td>
@@ -85,11 +85,11 @@
 							</tr>
 							<tr>
 								<td>Coupon</td>
-								<td>$28.00</td>
+								<td>$00.00</td>
 							</tr>
 							<tr>
 								<td>Total</td>
-								<td>${{($subTotal)+(28)}}.00</td>
+								<td>${{($subTotal)}}.00</td>
 							</tr>
 						</tbody>
 					</table>

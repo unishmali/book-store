@@ -14,7 +14,11 @@ use App\Models\product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    $recommend = product::where('bestselling' , 'yes')->take(7)->get();
+    $feature = product::where('feature','yes')->take(6)->get();
+    $sale = product::latest()->take(6)->get();
+    $offer = product::where('offer','yes')->take(6)->get();
+    return view('home',compact('recommend','feature','sale','offer'));
 });
 
 Route::get('/about', function () {
@@ -24,9 +28,10 @@ Route::get('/about', function () {
     return view('about');
 });
 Route::get('/shop',[ShopController::class,'shoplist']);
-Route::get('/shop/grid',[ShopController::class,'shopgrid']);
-Route::get('/shop/grid',[ShopController::class,'shopgrid']);
-Route::get('/shop/slidebar',[ShopController::class,'slidebar']);
+Route::get('/shop/sidebar',[ShopController::class,'sidebar']);
+
+Route::get('/search', [ShopController::class, 'shoplist']);
+
 
 Route::get('services',function(){
     return view('pages.services');
@@ -45,8 +50,8 @@ Route::get('/product/detail/{slug}',[ShopController::class,'detail']);
 Route::get('/blog',[BlogController::class,'blog']);
 
 Route::get('/contact',[ContactController::class,'contact']);
-Route::get('/shop/slidebar',[ShopController::class,'shopslidebar']);
-Route::get('/search', [BookController::class, 'search']);
+
+
 
 
 
@@ -54,6 +59,7 @@ Route::get('/search', [BookController::class, 'search']);
 
 
 Route::get('/dashboard', function () {
+   
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -70,8 +76,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/product',[ProductController::class,'create']);
     Route::post('/product/post',[ProductController::class,'store']);
     Route::get('/product/index',[ProductController::class,'index']);
+    Route::patch('/product/update/{id}',[ProductController::class,'update']);
     Route::delete('/product/delete/{id}',[ProductController::class,'destroy']);
     Route::get('/adminproduct/detail/{id}',[ProductController::class,'detail']);
+    Route::get('/product/edit/{id}',[ProductController::class,'edit']);
     //cart
     Route::post('/product/cart/{id}',[CartController::class,'store']);
 
@@ -80,6 +88,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout',[OrderController::class,'checkout']);
     Route::get('/wishlist',[WishlistController::class,'wishlist']);
    Route::post('/wishlist/{id}',[WishlistController::class,'store']);
+   //order
+   Route::get('/myorder',[OrderController::class,'view']);
+   Route::post('/order/store',[OrderController::class,'store']);
 });
 
 require __DIR__.'/auth.php';

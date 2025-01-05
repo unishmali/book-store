@@ -59,7 +59,7 @@
                                 <p class="text">Bookland is a Book Store Ecommerce Website Template by DexignZone lorem ipsum dolor sit</p>
                                 <div class="dz-social-icon style-1">
                                     <ul>
-                                        <li><a href="https://www.facebook.com/dexignzone" target="_blank"><i class="fa-brands fa-facebook-f" style="padding-top:12px;"></i></a></li>
+                                        <li><a href="https://www.facebook.com/earish.malakar/" target="_blank"><i class="fa-brands fa-facebook-f" style="padding-top:12px;"></i></a></li>
                                         <li><a href="https://www.youtube.com/channel/UCGL8V6uxNNMRrk3oZfVct1g" target="_blank"><i class="fa-brands fa-youtube"style="padding-top:12px;"></i></a></li>
                                         <li><a href="https://www.linkedin.com/showcase/3686700/admin/" target="_blank"><i class="fa-brands fa-linkedin"style="padding-top:12px;"></i></a></li>
                                         <li><a href="https://www.instagram.com/website_templates__/" target="_blank"><i class="fa-brands fa-instagram" style="padding-top:12px;"></i></a></li>

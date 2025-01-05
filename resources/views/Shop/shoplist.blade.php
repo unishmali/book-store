@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/shop/slidebar">
+                    <a class="nav-link" href="/shop/sidebar">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21V3C22 2.73478 21.8946 2.48043 21.7071 2.29289C21.5196 2.10536 21.2652 2 21 2H3C2.73478 2 2.48043 2.10536 2.29289 2.29289C2.10536 2.48043 2 2.73478 2 3V21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22ZM13 4H20V11H13V4ZM13 13H20V20H13V13ZM4 4H11V20H4V4Z" fill="#AAAAAA"></path>
                         </svg>
@@ -93,8 +93,8 @@
                                     <h4 class="title mb-0"><a href="books-list.html">{{$products->title}}</a></h4>
                                 </div>
                                 <div class="price">
-                                    <span class="price-num text-primary">${{$products->price}}.00</span>
-                                    <del>${{$products->compare_price}}.00</del>
+                                    <span class="price-num text-primary">${{($products->price)-($products->discount/100*$products->price)}}</span>
+                                    <del>${{$products->price}}.00</del>
                                 </div>
                             </div>
 
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="rate">
                                     <ul class="book-info">
-                                        <li><span>Writen by</span>Kevin Smiley</li>
+                                        <li><span>Writen by</span>{{$products->author}}</li>
                                         <li><span>Publisher</span>Printarea Studios</li>
                                         <li><span>Year</span>2019</li>
                                     </ul>

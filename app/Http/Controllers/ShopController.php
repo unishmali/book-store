@@ -8,9 +8,16 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
-    public function shoplist(){
+    public function shoplist(Request $request){
         $category = category::get();
+
+        $searchQuery = $request->input('query');
         $product = Product::with('category') ;
+
+        if ($searchQuery) {
+            $product = $product->where('title', 'LIKE', '%' . $searchQuery . '%') ->orWhere('author', 'LIKE', '%' . $searchQuery . '%');
+        }
+        
         $product =  $product->get();
         return view('Shop.shoplist',compact('product','category'));
     }
@@ -20,7 +27,13 @@ class ShopController extends Controller
         return view('Shop.grid',compact('product'));
     }
 
-    public function shopslidebar(){
+    public function sidebar(Request $request){
+        $searchQuery = $request->input('query');
+        $product = product::query();
+
+        if ($searchQuery) {
+            $product = $product->where('title', 'LIKE', '%' . $searchQuery . '%');
+        }
         $product = product::get();
         return view('Shop.sidebar',compact('product'));
     }

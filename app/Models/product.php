@@ -13,7 +13,7 @@ class product extends Model
     use HasFactory;
  
 
-    protected $fillable = ['title','slug','category_id','photo','author','price','compare_price','description','offer','feature','bestselling','isbn','lesson','pages','language','publisher','datepublish'];
+    protected $fillable = ['title','slug','category_id','photo','author','price','discount','description','offer','feature','bestselling','isbn','lesson','pages','language','publisher','datepublish'];
 
  
 

@@ -4,8 +4,10 @@
             {{ __('Edit Product !') }}
         </h2>
     </x-slot>
-    <form action="/product/post" method="POST" enctype="multipart/form-data">
+    <form action="/product/update/{{$products->id}}" method="POST" enctype="multipart/form-data">
+        @method('patch')
         @csrf
+
         <div class="px-12">
             <div class=" ">
                 <div class="card">
@@ -19,7 +21,9 @@
 
                         <div class="dz-message needsclick">
                             <i class="fa fa-arrow-circle-o-down"></i>
-                            <div class="fallback flex item-center justify-center mb-3">
+                
+                            <div class="fallback flex items-center justify-center mb-3">
+                            <img class="h-12  mr-4 " src="{{$products->photo}}"/>
                                 <input name="photo" type="file" multiple />
                             </div>
                             <!-- <span class="text-muted fs-13">
@@ -39,7 +43,7 @@
 
                                 <div class="mb-3">
                                     <label for="product-name" class="form-label">Product Name</label>
-                                    <input type="text" id="product-name" class="form-control" placeholder="Items Name" name="title">
+                                    <input type="text" id="product-name" class="form-control" value="{{$products->title}}" name="title">
                                 </div>
 
                             </div>
@@ -51,7 +55,7 @@
                                         Choose a Category
                                     </option>
                                     @foreach($category as $categories)
-                                    <option value="{{$categories->id}}">{{$categories->title}}</option>
+                                    <option value="{{$categories->id}}"{{ $categories->id == $products->category_id ? 'selected' : ''}}>{{$categories->title}}</option>
                                     @endforeach
                                 </select>
 
@@ -63,7 +67,7 @@
 
                                 <div class="mb-3">
                                     <label for="product-brand" class="form-label">Author</label>
-                                    <input type="text" id="product-brand" class="form-control" placeholder="Author Name" name="author">
+                                    <input type="text" id="product-brand" class="form-control" value="{{$products->author}}" name="author">
                                 </div>
 
                             </div>
@@ -71,14 +75,14 @@
 
                                 <div class="mb-3">
                                     <label for="product-weight" class="form-label">Publisher</label>
-                                    <input type="text" id="product-weight" class="form-control" placeholder="Publisher Name" name="publisher">
+                                    <input type="text" id="product-weight" class="form-control" value="{{$products->publisher}}" name="publisher">
                                 </div>
 
                             </div>
                             <div class="col-lg-4">
                                 
                                     <label for="gender" class="form-label">Publish Date</label>
-                                    <input type="date" id="product-weight" class="form-control" name="datepublish">
+                                    <input type="date" id="product-weight" class="form-control" value="{{$products->datepublish}}" name="datepublish">
                                 
                             </div>
                         </div>
@@ -86,27 +90,29 @@
                             <div>
                                 <label for="product-brand" class="form-label">Add to Offer</label>
                                 <select name="offer" id="" style="padding:9px; line-height:1rem;" class="w-full bg-transparent border  rounded-lg ">
-                                    <option value="No">No</option>
-                                    <option value="Yes">Yes</option>
+                                    <option value="No"{{$products->offer == "No" ? 'selected':''}}>No</option>
+                                    <option value="Yes"{{$products->offer == "Yes" ? 'selected':''}}>Yes</option>
                                 </select>
                             </div>
                             <div class="">
                                 <label for="product-brand" class="form-label">Add to Feature</label>
                                 <select name="feature" id="" style="padding:9px; line-height:1rem;" class="w-full bg-transparent border  rounded-lg ">
-                                    <option value="No">No</option>
+                                    <option value="No"{{$products->feature == "No" ? 'selected':''}}>No</option>
+                                    <option value="Yes"{{$products->feature == "Yes" ? 'selected':''}}>Yes</option>
                                 </select>
                             </div>
                             <div class="">
                                 <label for="product-brand" class="form-label">Add to Bestselling</label>
                                 <select name="bestselling" id="" style="padding:9px; line-height:1rem;" class="w-full bg-transparent border  rounded-lg ">
-                                    <option value="No">No</option>
+                                    <option value="No"{{$products->bestselling == "No" ? 'selected':''}}>No</option>
+                                    <option value="Yes"{{$products->bestselling == "Yes" ? 'selected':''}}>Yes</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row mb-4 mt-4 grid grid-cols-1 lg:grid-cols-3">
                             <div class="mb-3">
                                 <label for="product-id" class="form-label">Isbn Number</label>
-                                <input name="isbn" type="string" id="product-id" class="form-control" placeholder="Isbn Number">
+                                <input name="isbn" type="string" id="product-id" class="form-control" value="{{$products->isbn}}">
                             </div>
                         </div>
                     </div>
@@ -117,7 +123,7 @@
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <textarea name="description" id="editor" rows="10" cols="80">
-                This is my text.
+                {{$products->description}}
             </textarea>
                         </div>
                     </div>
@@ -126,21 +132,21 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="pages" class="form-label">Pages</label>
-                            <input name="pages" type="string" id="lesson" class="form-control" placeholder="Number of Pages">
+                            <input name="pages" type="string" id="lesson" class="form-control" value="{{$products->pages}}">
                         </div>
                     </div>
                     <div class="col-lg-4">
 
                         <div class="mb-3">
                             <label for="lesson" class="form-label">lesson</label>
-                            <input name="lesson" type="number" id="lesson" class="form-control" placeholder="Number of lesson">
+                            <input name="lesson" type="number" id="lesson" class="form-control" value="{{$products->lesson}}">
                         </div>
 
 
                     </div>
                     <div class="col-lg-4">
                         <label for="language" class="form-label">Language</label>
-                        <input type="string" name="language" id="language" class="form-control" placeholder="Eg: Sapanish">
+                        <input type="string" name="language" id="language" class="form-control" value="{{$products->language}}">
                     </div>
                 </div>
             </div>
@@ -155,17 +161,17 @@
 
                         <label for="product-price" class="form-label">Price</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text fs-20"><i class='bx bx-dollar'></i></span>
-                            <input name="price" type="number" id="product-price" class="form-control" placeholder="000">
+                            <span class="input-group-text fs-20"><i class='fa fa-dollar'></i></span>
+                            <input name="price" type="number" id="product-price" class="form-control" value="{{$products->price}}">
                         </div>
 
                     </div>
                     <div class="col-lg-4">
 
-                        <label for="product-discount" class="form-label">Compare Price</label>
+                        <label for="product-discount" class="form-label">Discount</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text fs-20"><i class='bx bxs-discount'></i></span>
-                            <input name="compare_price" type="number" id="product-discount" class="form-control" placeholder="000">
+                            <span class="input-group-text fs-20"><i class='fa fa-percentage'></i></span>
+                            <input name="discount" type="number" id="product-discount" class="form-control" value="{{$products->discount}}">
                         </div>
 
                     </div>
@@ -176,7 +182,7 @@
         <div class="p-3 bg-light mb-3 rounded">
             <div class="row justify-content-end g-2">
                 <div class="col-lg-2">
-                    <button type="submit" class="btn btn-outline-secondary w-100">Create Product</button>
+                    <button type="submit" class="btn btn-outline-secondary w-100">Update Product</button>
                 </div>
                 <!-- <div class="col-lg-2">
                     <a href="/product" class="btn btn-primary w-100">Cancel</a>

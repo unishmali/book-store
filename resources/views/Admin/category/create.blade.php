@@ -1,5 +1,5 @@
 <x-app-layout>
-<div>
+<div class="bg-white pt-24">
     <form action="/category/post" method="post">
         @csrf
         <lable>Title for category</lable>

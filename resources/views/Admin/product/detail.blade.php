@@ -1,42 +1,76 @@
 <x-app-layout>
-    <div  class="py-8 px-12">
-    <div class="row book-grid-row style-4 m-b60">
+    <div  class=" px-12">
+    <div class="row book-grid-row style-4 pt-[6rem] ">
 				<div class="col">
 					<div class="dz-box">
 						<div class="dz-media">
 							<img src="{{ asset($products->photo) }}" alt="book">
 						</div>
-						<div class="dz-content">
-							<div class="dz-header">
-								<h3 class="text-2xl ">{{$products->title}}</h3>
+						<div class="dz-content bg-white py-8 px-8 rounded-lg">
 							
+							<div class="dz-body ">
+							<h3 class="text-2xl mt-2 font-bold ">{{$products->title}}</h3>
+								<div class="book-detail mt-2 ">
+									
+								</div>
+								<span class="text-lg font-bold  text-slate-700">Description:</span>
+								<p class="text-1 break-words">{{$products->description}}</p>
+		
+				
 							</div>
-							<div class="dz-body">
-								<div class="book-detail">
-									<ul class="book-info">
-										<li>
-											<div class="writer-info">
-												
-												<div>
-													<span>Author</span>{{$products->author}}
-												</div>
-											</div>
-										</li>
-										<li><span>Publisher</span>Printarea Studios</li>
-										<li><span>Year</span>2019</li>
-									</ul>
-								</div>
-								<p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-								<p class="text-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem</p>
-								<div class="book-footer">
-									<div class="price">
-										<h5>$54.78</h5>
-										<p class="p-lr10">$70.00</p>
-									</div>
-
-								
-
-								</div>
+							<div class="tab-content">
+							<div id="graphic-design-1" class="tab-pane show active">
+								<table class="table border book-overview">
+									<tr>
+										<th>Book Title</th>
+										<td>{{$products->title}}</td>
+									</tr>
+									<tr>
+										<th>Author</th>
+										<td>{{$products->author}}</td>
+									</tr>
+									<tr>
+										<th>ISBN</th>
+										<td>ISBN : {{$products->isbn}}</td>
+									</tr>
+									<tr>
+										<th>Ediiton Language</th>
+										<td>{{$products->language}}</td>
+									</tr>
+									
+									<tr>
+										<th>Date Published</th>
+										<td>{{$products->datepublish}}</td>
+									</tr>
+									<tr>
+										<th>Publisher</th>
+										<td>{{$products->publisher}}</td>
+									</tr>
+									<tr>
+										<th>Pages</th>
+										<td>{{$products->pages}}</td>
+									</tr>
+									<tr>
+										<th>Lesson</th>
+										<td>{{$products->lesson}}</td>
+									</tr>
+									<tr>
+										<th>Price</th>
+										<td>$ {{$products->price}}.00</td>
+									</tr>
+									<tr>
+										<th>Discount</th>
+										<td>{{$products->discount}}%</td>
+									</tr>
+									<tr class="tags">
+										<th>Category</th>
+										<td>
+											<a href="javascript:void(0);" class="badge">{{$products->category->title}}</a>
+											
+										</td>
+									</tr>
+								</table>
+								<a href="/product/edit/{{$products->id}}" class="badge px-2 py-2 text-md">Edit</a>
 							</div>
 						</div>
 					</div>

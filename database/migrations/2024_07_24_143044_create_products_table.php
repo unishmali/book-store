@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('photo')->nullable();
             $table->integer('price');
-            $table->integer('compare_price');
+            $table->integer('discount');
             $table->text('description');
             $table->string('isbn');
             $table->string('author');

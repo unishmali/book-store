@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('content')
-<div class="page-content bg-grey">
+<div class="page-content bg-grey ">
 	<section class="content-inner-1">
 		<div class="container">
 			<div class="row book-grid-row style-4 m-b60">

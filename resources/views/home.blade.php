@@ -1,10 +1,10 @@
 @extends('layouts.apps')
 @section('content')
 <div style="">
-<div class="page-content bg-white">
-	
+	<div class="page-content bg-white">
+
 		<!--Swiper Banner Start -->
-		<div class="main-slider style-1"> 
+		<div class="main-slider style-1">
 			<div class="main-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide bg-blue" style="background-image: url(images/background/waveelement.png);">
@@ -14,11 +14,11 @@
 									<div class="col-md-6">
 										<div class="swiper-content">
 											<div class="content-info">
-												<h6 class="sub-title" data-swiper-parallax="-10">BEST MANAGEMENT </h6>
-												<h1 class="title mb-0" data-swiper-parallax="-20">Think and Grow Rich</h1>
+												<h6 class="sub-title" data-swiper-parallax="-10">BEST SELLER </h6>
+												<h1 class="title mb-0" data-swiper-parallax="-20">China Harayeko Manche</h1>
 												<ul class="dz-tags" data-swiper-parallax="-30">
-													<li><a href="javascript:void(0);">Napoleon Hill</a></li>
-													<li><a href="javascript:void(0);">Business & Strategy</a></li>
+													<li><a href="javascript:void(0);">Hari Bansa Acharya</a></li>
+													<li><a href="javascript:void(0);">Autoography</a></li>
 												</ul>
 												<p class="text mb-0" data-swiper-parallax="-40">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
 												<div class="price" data-swiper-parallax="-50">
@@ -26,16 +26,13 @@
 													<del>$15.25</del>
 													<span class="badge badge-danger">15% OFF</span>
 												</div>
-												<div class="content-btn" data-swiper-parallax="-60">
-													<a class="btn btn-primary btnhover" href="books-grid-view.html">Buy Now</a>
-													<a class="btn border btnhover ms-4 text-white" href="books-detail.html">See Details</a>
-												</div>
+												
 											</div>
 											<div class="partner">
 												<p>Our partner</p>
 												<div class="brand-logo">
 													<img src="images/partner/partner-1.png" alt="client">
-													<img  class="mid-logo" src="images/partner/partner-2.png" alt="client">
+													<img class="mid-logo" src="images/partner/partner-2.png" alt="client">
 													<img src="images/partner/partner-3.png" alt="client">
 												</div>
 											</div>
@@ -79,7 +76,7 @@
 												<p>Our partner</p>
 												<div class="brand-logo">
 													<img src="images/partner/partner-1.png" alt="client">
-													<img  class="mid-logo" src="images/partner/partner-2.png" alt="client">
+													<img class="mid-logo" src="images/partner/partner-2.png" alt="client">
 													<img src="images/partner/partner-3.png" alt="client">
 												</div>
 											</div>
@@ -105,7 +102,62 @@
 					<div class="swiper-slide">
 						<div class="books-card">
 							<div class="dz-media">
-								<img src="images/books/book16.png" alt="book">									
+								<img src="images/books/chinaharayeko.jpeg" alt="book">
+							</div>
+							<div class="dz-content">
+								<h5 class="title mb-0">China Harayeko Manche</h5>
+								<div class="dz-meta">
+									<ul>
+										<li>by Hari Bansa Acharya</li>
+									</ul>
+								</div>
+								<div class="book-footer">
+									<div class="price">
+										<span class="price-num">$9.5</span>
+									</div>
+									<div class="rate">
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="books-card">
+							<div class="dz-media">
+								<img src="images/books/grid/book9.jpg" alt="book">
+							</div>
+							<div class="dz-content">
+								<h5 class="title mb-0">Pushing Clouds</h5>
+								<div class="dz-meta">
+									<ul>
+										<li>by Jamet Sigh</li>
+									</ul>
+								</div>
+								<div class="book-footer">
+									<div class="price">
+										<span class="price-num">$5.7</span>
+									</div>
+									<div class="rate">
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-yellow"></i>
+										<i class="flaticon-star text-muted"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="swiper-slide">
+						<div class="books-card">
+							<div class="dz-media">
+								<img src="images/books/chinaharayeko.jpeg" alt="book">
 							</div>
 							<div class="dz-content">
 								<h5 class="title mb-0">Think and Grow Rich</h5>
@@ -132,34 +184,7 @@
 					<div class="swiper-slide">
 						<div class="books-card">
 							<div class="dz-media">
-								<img src="images/books/grid/book9.jpg" alt="book">									
-							</div>
-							<div class="dz-content">
-								<h5 class="title mb-0">Pushing Clouds</h5>
-								<div class="dz-meta">
-									<ul>
-										<li>by Jamet Sigh</li>
-									</ul>
-								</div>
-								<div class="book-footer">
-									<div class="price">
-										<span class="price-num">$5.7</span>
-									</div>
-									<div class="rate">
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-muted"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="books-card">
-							<div class="dz-media">
-								<img src="images/books/book16.png" alt="book">									
+								<img src="images/books/chinaharayeko.jpeg" alt="book">
 							</div>
 							<div class="dz-content">
 								<h5 class="title mb-0">Think and Grow Rich</h5>
@@ -183,44 +208,19 @@
 							</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="books-card">
-							<div class="dz-media">
-								<img src="images/books/grid/book9.jpg" alt="book">									
-							</div>
-							<div class="dz-content">
-								<h5 class="title mb-0">Pushing Clouds</h5>
-								<div class="dz-meta">
-									<ul>
-										<li>by Jamet Sigh</li>
-									</ul>
-								</div>
-								<div class="book-footer">
-									<div class="price">
-										<span class="price-num">$5.7</span>
-									</div>
-									<div class="rate">
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-muted"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
+				
 				</div>
 			</div>
-		</div>		
+		</div>
 		<!--Swiper Banner End-->
-		
+
 		<!-- Client Start-->
-	<x-clientswiper/>
+		<x-clientswiper />
 		<!-- Client End-->
 
 		<!--Recommend Section Start-->
-		<section class="content-inner-1 bg-grey reccomend" >
+		<section class="content-inner-1 bg-grey reccomend">
 			<div class="container">
 				<div class="section-head text-center">
 					<h2 class="title">Recomended For You</h2>
@@ -229,102 +229,44 @@
 				<!-- Swiper -->
 				<div class="swiper-container swiper-two">
 					<div class="swiper-wrapper">
+						@foreach($recommend as $recommends)
 						<div class="swiper-slide">
 							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.1s">
-								<div class="dz-media">
-									<img src="images/books/grid/book6.jpg" alt="book">									
+								<div class="dz-media ">
+									<img src="{{$recommends->photo}}" alt="book">
 								</div>
 								<div class="dz-content">
-									<h4 class="title">Adventure</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
+									<h4 class="title">{{$recommends->title}}</h4>
+									<span class="price">${{$recommends->price}}</span>
+
+									<form action="/product/cart/{{$recommends->id}}" method="post">
+										@csrf
+										<input type="hidden" name="product_id" value="{{$recommends->id}}">
+										<input type="hidden" value="1" name="quantity">
+										<button type="submit" class="btn btn-secondary box-btn btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</button>
+									</form>
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="dz-media">
-									<img src="images/books/grid/book5.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Take Tango</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="dz-media">
-									<img src="images/books/grid/book2.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Home</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<img src="images/books/grid/book16.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Thunder Stunt</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.5s">
-								<div class="dz-media">
-									<img src="images/books/grid/book14.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Heavy Lift</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.6s">
-								<div class="dz-media">
-									<img src="images/books/grid/book1.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Real Life</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.7s">
-								<div class="dz-media">
-									<img src="images/books/grid/book15.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Terrible</h4>
-									<span class="price">$18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
+						@endforeach
+
+
+
+
+
+
 					</div>
 				</div>
 			</div>
 		</section>
-		
+
 		<!-- icon-box1 -->
 		<section class="content-inner-2">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
 						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10" >
+							<div class="icon-bx-sm m-b10">
 								<i class="flaticon-power icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -335,7 +277,7 @@
 					</div>
 					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
 						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10" > 
+							<div class="icon-bx-sm m-b10">
 								<i class="flaticon-shield icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -346,7 +288,7 @@
 					</div>
 					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10"> 
+							<div class="icon-bx-sm m-b10">
 								<i class="flaticon-like icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -357,7 +299,7 @@
 					</div>
 					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
 						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10 "  > 
+							<div class="icon-bx-sm m-b10 ">
 								<i class="flaticon-star icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -370,7 +312,7 @@
 			</div>
 		</section>
 		<!-- icon-box1 End-->
-		
+
 		<!-- Book Sale -->
 		<section class="content-inner-1">
 			<div class="container">
@@ -384,150 +326,42 @@
 				</div>
 				<div class="swiper-container books-wrapper-3 swiper-four">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide">
+						@foreach($sale as $sales)
+						<a href="/product/detail/{{$sales->slug}}"><div class="swiper-slide " style=" transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)';"
+							onmouseout="this.style.transform='scale(1)';">
 							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.1s">
 								<div class="dz-media">
-									<img src="images/books/grid/book5.jpg" alt="book">									
+									<img src="{{$sales->photo}}" alt="book">
 								</div>
 								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Take Out Tango</a></h5>
+									<h5 class="title"><a href="books-grid-view.html">{{$sales->title}}</a></h5>
 									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate" >
-											<i class="flaticon-star" style="padding-top: 4px;"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">$9.5</span>
-											<del>$12.0</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="dz-media">
-									<img src="images/books/grid/book11.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">The Missadventure</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
+										<li><a href="books-grid-view.html">{{$sales->category->title}}</a></li>
+										
 									</ul>
 									<div class="book-footer">
 										<div class="rate">
 											<i class="flaticon-star" style="padding-top: 4px;"></i> 6.8
 										</div>
 										<div class="price">
-											<span class="price-num">$9.5</span>
-											<del>$12.0</del>
+											<span class="price-num">${{ ($sales->price)-($sales->discount/100*$sales->price)}}</span>
+											<del>${{$sales->price}}</del>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="dz-media">
-									<img src="images/books/grid/book7.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Seconds [PART 1]</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star" style="padding-top: 4px;"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">$9.5</span>
-											<del>$12.0</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<img src="images/books/grid/book12.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">The Missadventure</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star" style="padding-top: 4px;"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">$9.5</span>
-											<del>$12.0</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.5s">
-								<div class="dz-media">
-									<img src="images/books/grid/book15.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Terrible Madness</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">$9.5</span>
-											<del>$12.0</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.6s">
-								<div class="dz-media">
-									<img src="images/books/grid/book3.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Battle Drive</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">$9.5</span>
-											<del>$12.0</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						</a>
+						@endforeach
+						
+						
+						
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- Book Sale End -->
-		
+
 		<!-- Feature Product -->
 		<section class="content-inner-1 bg-grey reccomend">
 			<div class="container">
@@ -540,23 +374,29 @@
 			<div class="container">
 				<div class="swiper-container books-wrapper-2 swiper-three">
 					<div class="swiper-wrapper">
+					
+						
+					
+							
+						
+						@foreach($feature as $features)
 						<div class="swiper-slide">
 							<div class="books-card style-2">
 								<div class="dz-media">
-									<img src="images/books/large/bigbook1.jpg" alt="book">									
+									<img src="{{$features->photo}}" alt="book">
 								</div>
 								<div class="dz-content">
 									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
+									<h2 class="title">{{$features->title}}</h2>
 									<ul class="dz-tags">
 										<li>Napoleon Hill</li>
 										<li>Business & Strategy</li>
 									</ul>
 									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
 									<div class="price">
-										<span class="price-num">$9.5</span>
-										<del>$12.0</del>
-										<span class="badge">20% OFF</span>
+										<span class="price-num">${{ ($features->price)-($features->discount/100*$features->price)}}</span>
+										<del>${{$features->price}}.00</del>
+										<span class="badge">{{$features->discount}}% OFF</span>
 									</div>
 									<div class="bookcard-footer">
 										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
@@ -565,131 +405,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-2">
-								<div class="dz-media">
-									<img src="images/books/large/bigbook2.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
-									<ul class="dz-tags">
-										<li>Napoleon Hill</li>
-										<li>Business & Strategy</li>
-									</ul>
-									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-									<div class="price">
-										<span class="price-num">$9.5</span>
-										<del>$12.0</del>
-										<span class="badge">20% OFF</span>
-									</div>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
-										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-2">
-								<div class="dz-media">
-									<img src="images/books/large/bigbook1.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
-									<ul class="dz-tags">
-										<li>Napoleon Hill</li>
-										<li>Business & Strategy</li>
-									</ul>
-									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-									<div class="price">
-										<span class="price-num">$9.5</span>
-										<del>$12.0</del>
-										<span class="badge">20% OFF</span>
-									</div>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
-										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-2">
-								<div class="dz-media">
-									<img src="images/books/large/bigbook2.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
-									<ul class="dz-tags">
-										<li>Napoleon Hill</li>
-										<li>Business & Strategy</li>
-									</ul>
-									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-									<div class="price">
-										<span class="price-num">$9.5</span>
-										<del>$12.0</del>
-										<span class="badge">20% OFF</span>
-									</div>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
-										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-2">
-								<div class="dz-media">
-									<img src="images/books/large/bigbook1.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
-									<ul class="dz-tags">
-										<li>Napoleon Hill</li>
-										<li>Business & Strategy</li>
-									</ul>
-									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-									<div class="price">
-										<span class="price-num">$9.5</span>
-										<del>$12.0</del>
-										<span class="badge">20% OFF</span>
-									</div>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
-										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-2">
-								<div class="dz-media">
-									<img src="images/books/large/bigbook2.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
-									<ul class="dz-tags">
-										<li>Napoleon Hill</li>
-										<li>Business & Strategy</li>
-									</ul>
-									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-									<div class="price">
-										<span class="price-num">$9.5</span>
-										<del>$12.0</del>
-										<span class="badge">20% OFF</span>
-									</div>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
-										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 					<div class="pagination-align style-2">
 						<div class="swiper-button-prev"><i class="fa-solid fa-angle-left"></i></div>
@@ -700,7 +416,7 @@
 			</div>
 		</section>
 		<!-- Feature Product End -->
-		
+
 		<!-- Special Offer-->
 		<section class="content-inner-2">
 			<div class="container">
@@ -713,13 +429,14 @@
 				</div>
 				<div class="swiper-container book-swiper">
 					<div class="swiper-wrapper">
+						@foreach($offer as $offers)
 						<div class="swiper-slide">
 							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.1s">
 								<div class="dz-media">
-									<a href="books-detail.html"><img src="images/blog/large/blog2.jpg" alt="/"/></a>
+									<a href="books-detail.html"><img style=" height:250;" src="{{ asset($offers->photo) }}" alt="/" /></a>
 								</div>
 								<div class="dz-info">
-									<h4 class="dz-title"><a href="books-detail.html">SECONDS [Part I]</a></h4>
+									<h4 class="dz-title"><a href="books-detail.html">{{$offers->title}}</a></h4>
 									<div class="dz-meta">
 										<ul class="dz-tags">
 											<li><a href="books-detail.html">BIOGRAPHY</a></li>
@@ -737,136 +454,20 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="dz-media">
-									<a href="books-detail.html"><img src="images/blog/blog6.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info">
-									<h4 class="dz-title"><a href="books-detail.html">Terrible Madness</a></h4>
-									<div class="dz-tags">
-										<ul>
-											<li><a href="books-detail.html">BIOGRAPHY</a></li>
-											<li><a href="books-detail.html">THRILLER</a></li>
-											<li><a href="books-detail.html">HORROR</a></li>
-										</ul>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary m-t15 btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-										<div class="price-details">
-											$18,78 <del>$25</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="dz-media">
-									<a href="books-detail.html"><img src="images/blog/blog7.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info">
-									<h4 class="dz-title"><a href="books-detail.html">REWORK</a></h4>
-									<div class="dz-tags">
-										<ul>
-											<li><a href="books-detail.html">BIOGRAPHY</a></li>
-											<li><a href="books-detail.html">THRILLER</a></li>
-											<li><a href="books-detail.html">HORROR</a></li>
-										</ul>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary m-t15 btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-										<div class="price-details">
-											$18,78 <del>$25</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<a href="books-detail.html"><img src="images/blog/blog5.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info">
-									<h4 class="dz-title"><a href="books-detail.html">SECONDS [Part I]</a></h4>
-									<div class="dz-tags">
-										<ul>
-											<li><a href="books-detail.html">BIOGRAPHY</a></li>
-											<li><a href="books-detail.html">THRILLER</a></li>
-											<li><a href="books-detail.html">HORROR</a></li>
-										</ul>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary m-t15 btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-										<div class="price-details">
-											$18,78 <del>$25</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.5s">
-								<div class="dz-media">
-									<a href="books-detail.html"><img src="images/blog/blog6.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info">
-									<h4 class="dz-title"><a href="books-detail.html">Terrible Madness</a></h4>
-									<div class="dz-tags">
-										<ul>
-											<li><a href="books-detail.html">BIOGRAPHY</a></li>
-											<li><a href="books-detail.html">THRILLER</a></li>
-											<li><a href="books-detail.html">HORROR</a></li>
-										</ul>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary m-t15 btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-										<div class="price-details">
-											$18,78 <del>$25</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.6s">
-								<div class="dz-media">
-									<a href="books-detail.html"><img src="images/blog/blog7.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info">
-									<h4 class="dz-title"><a href="books-detail.html">REWORK</a></h4>
-									<div class="dz-tags">
-										<ul>
-											<li><a href="books-detail.html">BIOGRAPHY</a></li>
-											<li><a href="books-detail.html">THRILLER</a></li>
-											<li><a href="books-detail.html">HORROR</a></li>
-										</ul>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary m-t15 btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-										<div class="price-details">
-											$18,78 <del>$25</del>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
+						
+						
+						
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- Special Offer End -->
-		
+
 		<!-- Testimonial -->
 		<x-testimonial />
 		<!-- Testimonial End -->
-		
+
 		<!-- Latest News -->
 		<section class="content-inner-2">
 			<div class="container">
@@ -877,7 +478,7 @@
 				<div class="swiper-container blog-swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<div class="dz-blog style-1 bg-white m-b30 wow fadeInUp" data-wow-delay="0.1s" >
+							<div class="dz-blog style-1 bg-white m-b30 wow fadeInUp" data-wow-delay="0.1s">
 								<div class="dz-media">
 									<a href="blog-detail.html"><img src="images/blog/recent-blog/blog2.jpg" alt="/"></a>
 								</div>
@@ -953,15 +554,15 @@
 			</div>
 		</section>
 		<!-- Latest News End -->
-		
+
 		<!-- Feature Box -->
 		<x-feature />
 		<!-- Feature Box End -->
 
 		<!-- Newsletter -->
-	<x-newsletter/>
+		<x-newsletter />
 		<!-- Newsletter End -->
-		
+
 	</div>
 
 </div>

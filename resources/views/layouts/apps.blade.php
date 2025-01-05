@@ -44,5 +44,6 @@
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/live-search.js') }}"></script>
    
+   
     </body>
 </html>

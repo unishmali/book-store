@@ -113,7 +113,7 @@
                                             <span class="ms-2">Profile</span>
                                         </div>
                                     </a>
-                                    <a href="/cart" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
+                                    <a href="/myorder" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000">
                                                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -158,12 +158,12 @@
 
             <!-- header search nav -->
             <div class="header-search-nav">
-                <form class="header-item-search" id="search-form">
+                <form  action="/search" method="get" class="header-item-search"  id="search-form">
                     <div class="input-group search-input" style="position:relative;">
 
-                        <input type="text"  class="form-control"  id="search-input" aria-label="Text input with dropdown button" placeholder="Search Books Here">
-                        <button class="btn" type="button"><i class="flaticon-loupe"></i></button>
-                        <ul id="book-suggestions" class="list-group" style="position:absolute; top: 20; padding:20; left: 0; right: 0; z-index: 1000;"></ul>
+                        <input style="width: fit-content; height:fit-content" type="text"  class="form-control" name="query" id="search-input" aria-label="Text input with dropdown button" placeholder="Search Books Here">
+                        <button class="btn" type="submit"><i class="flaticon-loupe"></i></button>
+                        <ul id="search-dropdown"  class="list-group" style="position:absolute; top: 20; padding:20; left: 0; right: 0; z-index: 1000;"></ul>
                     </div>
 
 

@@ -35,15 +35,17 @@ class ProductController extends Controller
         return view('Admin.product.detail',compact('products'));
     }
 
-    public function edit(){
-    return view('Admin.product.edit');
+    public function edit($id){
+        $products = Product::find($id);
+        $category = category::get();
+    return view('Admin.product.edit',compact('products','category'));
 }
 
 public function update(Request $request,$id){
-    $product = product::find($id);
+    $product = Product::find($id);
     $name = Str::slug(Carbon::now()).'.'. $request->file('photo')->getClientOriginalExtension();
     Storage::disk('public')->putFileAs('images',$request->file('photo'),$name);
-    $product->update($request->except('photo')+['photo'=>$name]);
+    $product->update($request->except('photo')+['photo' => $name]);
 
     return redirect('/product/index');
 }
