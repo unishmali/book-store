@@ -18,7 +18,7 @@
                 </thead>
               
                 <tbody>
-                   @foreach('')
+                  
                     <tr>
                         <td class="product-item-img"><img src="/images/books/chinaharayeko.jpeg"></td>
                         <td class="product-item-name">yunis</td>
