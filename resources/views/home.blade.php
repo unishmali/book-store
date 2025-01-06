@@ -433,7 +433,7 @@
 						<div class="swiper-slide">
 							<div class="dz-card style-2 wow fadeInUp" data-wow-delay="0.1s">
 								<div class="dz-media">
-									<a href="books-detail.html"><img style=" height:250;" src="{{ asset($offers->photo) }}" alt="/" /></a>
+									<a href="books-detail.html"><img style=" object-fit: contain;  width:100%; height: 200px;" src="{{ asset($offers->photo) }}" alt="/" /></a>
 								</div>
 								<div class="dz-info">
 									<h4 class="dz-title"><a href="books-detail.html">{{$offers->title}}</a></h4>

@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WishlistController;
 use App\Models\product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -59,8 +60,16 @@ Route::get('/contact',[ContactController::class,'contact']);
 
 
 Route::get('/dashboard', function () {
-   
-    return view('dashboard');
+    if(Auth::id()){
+        $usertype = Auth::user()->usertype;
+        if($usertype === 'admin'){
+            return view('dashboard');
+        }
+        else{
+            return redirect('/');
+        }
+    }
+    
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

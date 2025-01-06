@@ -4,13 +4,13 @@
         <div class="container clearfix">
             <!-- Website Logo -->
             <div class="logo-header logo-dark">
-                <a href="index.html"><img src="{{ asset('images/logo.png') }}" alt="logo"></a>
+                <a href="index.html"><img  src="{{ asset('images/logo.png') }}" alt="logo"></a>
             </div>
 
             <!-- EXTRA NAV -->
-            <div class="extra-nav">
+            <div class="extra-nav" >
                 <div class="extra-cell">
-                    <ul class="navbar-nav header-right">
+                    <ul class="navbar-nav header-right" >
                         <li class="nav-item">
                             <a class="nav-link" href="/wishlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/cart"> <button type="button" class="nav-link box cart-btn">
+                            <a href="/cart"> <button type="button" class="nav-link box cart-btn" style="margin-right:10px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                                         <path d="M0 0h24v24H0V0z" fill="none" />
                                         <path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.37-.66-.11-1.48-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
@@ -90,8 +90,8 @@
                         </li>
                         @auth
                         <li class="nav-item dropdown profile-dropdown  ms-4">
-                            <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="images/profile1.jpg" alt="/">
+                            <a  class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img style=" height:50px" src="images/client/userdummy1.png" alt="/">
                                 <div class="profile-info">
                                     <h6 class="title">{{ Auth::user()->name }}</h6>
                                     <span>{{ Auth::user()->email }}</span>
@@ -104,7 +104,7 @@
                                 </div>
                               
                                 <div class="dropdown-body">
-                                    <a href="my-profile.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
+                                    <a href="/profile" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000">
                                                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -157,8 +157,8 @@
             </div>
 
             <!-- header search nav -->
-            <div class="header-search-nav">
-                <form  action="/search" method="get" class="header-item-search"  id="search-form">
+            <div  class="header-search-nav">
+                <form  style="margin-right:20px;" action="/search" method="get" class="header-item-search"  id="search-form">
                     <div class="input-group search-input" style="position:relative;">
 
                         <input style="width: fit-content; height:fit-content" type="text"  class="form-control" name="query" id="search-input" aria-label="Text input with dropdown button" placeholder="Search Books Here">

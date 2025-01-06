@@ -22742,8 +22742,8 @@ body.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-va
     display: table-cell;
     vertical-align: middle; }
   .logo-header img {
-    height: 90px;
-    max-width: 200px;
+    height: 95px;
+    max-width: 220px;
     object-fit: contain;
     -webkit-transition: all 0.8s;
     -ms-transition: all 0.8s;
