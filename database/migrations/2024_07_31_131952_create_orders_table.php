@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('email');
          $table->string('phone');
          $table->text('note')->nullable();
+         $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+         $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

@@ -32,7 +32,7 @@
                                     </svg>
                                     @php
                                     $userId = Auth::id();
-                                    $totalCartCount = \App\Models\cart::where('user_id',$userId)->count();
+                                    $totalCartCount = \App\Models\cart::where('user_id',$userId)->where('status',0)->count();
                                     @endphp
                                     <span class="badge">{{$totalCartCount}}</span>
                                 </button></a>

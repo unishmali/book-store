@@ -2,7 +2,13 @@
 @section('content')
 <div style="">
 	<div class="page-content bg-white">
-
+	<div>
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+    </div>
 		<!--Swiper Banner Start -->
 		<div class="main-slider style-1">
 			<div class="main-swiper">

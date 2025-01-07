@@ -12,7 +12,7 @@ class CartController extends Controller
 {
   public function cart()
   {
-    $cartItem = cart::with('product')->where('user_id', Auth::id());
+    $cartItem = cart::with('product')->where('user_id', Auth::id())->where('status',0);
     $cartItem = $cartItem->get();
     $subTotal = 0;
     foreach ($cartItem as $items) {
@@ -27,7 +27,7 @@ class CartController extends Controller
 
     $userId = Auth::id();
     $productId = $request->product_id;
-    $productInCart = cart::where('user_id', $userId)->where('product_id', $productId)->first();
+    $productInCart = cart::where('user_id', $userId)->where('product_id', $productId)->where('status',0)->first();
     if ($productInCart) {
       return redirect('/shop')->with(['message' => 'product is already in cart']);
     } else {

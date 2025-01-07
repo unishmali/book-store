@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderitemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
@@ -98,7 +99,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/wishlist',[WishlistController::class,'wishlist']);
    Route::post('/wishlist/{id}',[WishlistController::class,'store']);
    //order
-   Route::get('/myorder',[OrderController::class,'view']);
+   Route::get('/myorder',[OrderitemController::class,'view']);
    Route::post('/order/store',[OrderController::class,'store']);
 });
 

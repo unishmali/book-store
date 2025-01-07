@@ -19,8 +19,10 @@
 							</tr>
 						</thead>
 						<tbody>
+							
 							@foreach($cartItem as $cartItems)
 							<tr>
+							
 								<td class="product-item-img"><img src="{{  asset($cartItems->product->photo)}}" alt=""></td>
 								<td class="product-item-name">{{$cartItems->product->title}}</td>
 								<td class="product-item-price">${{$cartItems->product->price}}.00</td>
@@ -31,10 +33,18 @@
 								</td>
 								<td class="product-item-totle">${{($cartItems->product->price)*($cartItems->quantity)}}.00</td>
 								<td class="product-item-close"><button style="background: transparent; border:none;"><a href="" class="ti-close"><i class="fa fa-close" style="padding-right: 8px;"></i></a></button></td>
+
+
+
+
+
+
 							</tr>
-							@endforeach
 							
+
 						</tbody>
+						@endforeach
+							
 					</table>
 				</div>
 			</div>
