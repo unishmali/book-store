@@ -1,8 +1,8 @@
-<x-app-layout >
-   
-  
+<x-app-layout>
+
+
     <div class="page-content pt-12 ">
- 
+
         <!-- Start Container Fluid -->
         <div class="container-fluid">
 
@@ -50,7 +50,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                        <div class="avatar-md bg-orange-300 rounded flex items-center justify-center ">
+                                            <div class="avatar-md bg-orange-300 rounded flex items-center justify-center ">
                                                 <i class="fa fa-file   text-slate-700 text-2xl"></i>
                                             </div>
                                         </div> <!-- end col -->
@@ -129,7 +129,7 @@
                     </div> <!-- end row -->
                 </div> <!-- end col -->
 
-               
+
             </div> <!-- end row -->
 
             <div class="row">
@@ -191,7 +191,7 @@
                                         <th class="text-muted">Exit Rate</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <!-- <tbody>
                                     <tr>
                                         <td class="ps-3"><a href="#" class="text-muted">larkon/ecommerce.html</a></td>
                                         <td>465 </td>
@@ -227,7 +227,7 @@
                                         <td>478 </td>
                                         <td><span class="badge badge-soft-danger">1.4%</span></td>
                                     </tr>
-                                </tbody>
+                                </tbody> -->
                             </table>
                         </div>
                     </div>
@@ -328,9 +328,7 @@
                             <table class="table mb-0">
                                 <thead class="bg-light bg-opacity-50">
                                     <tr>
-                                        <th class="ps-3">
-                                            Order ID.
-                                        </th>
+                                       
                                         <th>
                                             Date
                                         </th>
@@ -349,113 +347,62 @@
                                         <th>
                                             Address
                                         </th>
-                                        <th>
-                                            Payment Type
-                                        </th>
+                                        
                                         <th>
                                             Status
                                         </th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <!-- end thead-->
+
                                 <tbody>
+                                    @if(empty($groupedOrders))
+                                    <td> No orders yet.</td>
+                                    @else
+                                    @foreach($groupedOrders as $group)
                                     <tr>
                                         <td class="ps-3">
-                                            <a href="order-detail.html">#RB5625</a>
+                                            <a href="order-detail.html">{{$group['order']->created_at->toFormattedDateString()}}</a>
                                         </td>
-                                        <td>29 April 2024</td>
+                                       
+                                       
                                         <td>
-                                            <img src="assets/images/products/product-1(1).png" alt="product-1(1)" class="img-fluid avatar-sm">
+                                        @foreach($group['orderItems'] as $orderItem)
+                                            <img  src="{{asset($orderItem->cart->product->photo)}}" alt="product-1(1)" class="img-fluid avatar-sm">
+                                            @endforeach
+                                        </td>
+                                       
+                                        <td>
+                                            <a href="#!">{{$group['order']->fname}}{{$group['order']->lname}}
+                                            </a>
+                                        </td>
+                                        <td>{{$group['order']->email}}</td>
+                                        <td>{{$group['order']->phone}}</td>
+                                        <td>{{$group['order']->address}}</td>
+                                       
+                                        <td class="">
+                                          <span class=" {{ $group['order']->status  == 'Canceled' ? 'text-red-500' : 'text-green-700' }}"> {{$group['order']->status}}</span> 
                                         </td>
                                         <td>
-                                            <a href="#!">Anna M. Hines</a>
-                                        </td>
-                                        <td>anna.hines@mail.com</td>
-                                        <td>(+1)-555-1564-261</td>
-                                        <td>Burr Ridge/Illinois</td>
-                                        <td>Credit Card</td>
-                                        <td>
-                                            <i class="bx bxs-circle text-success me-1"></i>Completed
+                                        <div class="d-flex gap-2">
+                                                    <a href="/order/accept/{{$group['order']->id}}" class="btn btn-light btn-sm hover:scale-110 transition hover:ease-in-out  hover:bg-green-300 duration-150  hover:shadow">Accept</a>
+                                                 <form action="" method="post"> 
+                                                 @method('delete')
+                                                    @csrf 
+                                                     <a href="/order/cancel/{{$group['order']->id}}" class="btn btn-soft-primary btn-sm hover:scale-110 transition hover:ease-in-out bg-red-500 hover:bg-red-600 duration-150 hover:shadow text-white">Cancel</a>
+                                                    </form>
+                                                    <a href="#!" class="btn btn-sm btn-soft-primary  ">
+                                    <i class="fa fa-eye mr-1 "></i>Detail
+                                </a>
+                                                </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="ps-3">
-                                            <a href="order-detail.html">#RB9652</a>
-                                        </td>
-                                        <td>25 April 2024</td>
-                                        <td>
-                                            <img src="assets/images/products/product-4.png" alt="product-4" class="img-fluid avatar-sm">
-                                        </td>
-                                        <td>
-                                            <a href="#!">Judith H. Fritsche</a>
-                                        </td>
-                                        <td>judith.fritsche.com</td>
-                                        <td>(+57)-305-5579-759</td>
-                                        <td>SULLIVAN/Kentucky</td>
-                                        <td>Credit Card</td>
-                                        <td>
-                                            <i class="bx bxs-circle text-success me-1"></i>Completed
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ps-3">
-                                            <a href="order-detail.html">#RB5984</a>
-                                        </td>
-                                        <td>25 April 2024</td>
-                                        <td>
-                                            <img src="assets/images/products/product-5.png" alt="product-5" class="img-fluid avatar-sm">
-                                        </td>
-                                        <td>
-                                            <a href="#!">Peter T. Smith</a>
-                                        </td>
-                                        <td>peter.smith@mail.com</td>
-                                        <td>(+33)-655-5187-93</td>
-                                        <td>Yreka/California</td>
-                                        <td>Pay Pal</td>
-                                        <td>
-                                            <i class="bx bxs-circle text-success me-1"></i>Completed
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ps-3">
-                                            <a href="order-detail.html">#RB3625</a>
-                                        </td>
-                                        <td>21 April 2024</td>
-                                        <td>
-                                            <img src="assets/images/products/product-6.png" alt="product-6" class="img-fluid avatar-sm">
-                                        </td>
-                                        <td>
-                                            <a href="#!">Emmanuel J. Delcid</a>
-                                        </td>
-                                        <td>
-                                            emmanuel.delicid@mail.com
-                                        </td>
-                                        <td>(+30)-693-5553-637</td>
-                                        <td>Atlanta/Georgia</td>
-                                        <td>Pay Pal</td>
-                                        <td>
-                                            <i class="bx bxs-circle text-primary me-1"></i>Processing
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ps-3">
-                                            <a href="order-detail.html">#RB8652</a>
-                                        </td>
-                                        <td>18 April 2024</td>
-                                        <td>
-                                            <img src="assets/images/products/product-1(2).png" alt="product-1(2)" class="img-fluid avatar-sm">
-                                        </td>
-                                        <td>
-                                            <a href="#!">William J. Cook</a>
-                                        </td>
-                                        <td>william.cook@mail.com</td>
-                                        <td>(+91)-855-5446-150</td>
-                                        <td>Rosenberg/Texas</td>
-                                        <td>Credit Card</td>
-                                        <td>
-                                            <i class="bx bxs-circle text-primary me-1"></i>Processing
-                                        </td>
-                                    </tr>
+                                    @endforeach
+
+                                    @endif
+                                    
+
+
                                 </tbody>
                                 <!-- end tbody -->
                             </table>
@@ -505,7 +452,7 @@
         </div>
         <!-- End Container Fluid -->
 
-       
+
 
     </div>
     <!-- ==================================================== -->

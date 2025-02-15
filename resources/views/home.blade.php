@@ -46,7 +46,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="banner-media" data-swiper-parallax="-100">
-											<img src="images/banner/banner-media.png" alt="banner-media">
+											<!-- <img src="images/banner/banner-media.png" alt="banner-media"> -->
 										</div>
 										<img class="pattern" src="images/Group.png" data-swiper-parallax="-100" alt="dots">
 									</div>
@@ -90,7 +90,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="banner-media" data-swiper-parallax="-100">
-											<img src="images/banner/banner-media2.png" alt="banner-media1">
+											<!-- <img src="images/banner/banner-media2.png" alt="banner-media1"> -->
 										</div>
 										<img class="pattern" src="images/Group.png" data-swiper-parallax="-100" alt="dots">
 									</div>

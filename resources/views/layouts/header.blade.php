@@ -246,6 +246,7 @@
         </div>
     </div>
     <!-- Main Header End -->
+    <div id="cart-message" style="display: none; margin-top: 10px; padding: 5px; border-radius: 5px;"></div>
 
 </header>
 <!-- Header End -->

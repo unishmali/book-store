@@ -11,6 +11,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WishlistController;
+use App\Models\Order;
+use App\Models\orderitem;
 use App\Models\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -64,12 +66,25 @@ Route::get('/dashboard', function () {
     if(Auth::id()){
         $usertype = Auth::user()->usertype;
         if($usertype === 'admin'){
-            return view('dashboard');
+
+            $orders = Order::latest()->get();
+
+            $groupedOrders = [];
+            foreach ($orders as $order) {
+                $groupedOrders[] = [
+                    'order' => $order,
+                    'orderItems' => orderitem::with('cart.product') // Eager load cart and product
+                        ->where('order_id', $order->id)
+                        ->get(),
+                ];
+            }
+            return view('dashboard',compact('groupedOrders'));
         }
         else{
             return redirect('/');
         }
     }
+  
     
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -101,6 +116,8 @@ Route::middleware('auth')->group(function () {
    //order
    Route::get('/myorder',[OrderitemController::class,'view']);
    Route::post('/order/store',[OrderController::class,'store']);
+   Route::get('/order/accept/{id}',[OrderController::class,'orderaccept']);
+   Route::get('/order/cancel/{id}',[OrderController::class,'ordercancel']);
 });
 
 require __DIR__.'/auth.php';

@@ -136,9 +136,7 @@
                         <div class="col-lg-6 col-md-12 text-start">
                             <p class="copyright-text">Bookland Book Store Ecommerce Website - © 2022 All Rights Reserved</p>
                         </div>
-                        <div class="col-lg-6 col-md-12 text-end">
-                            <p>Made with <span class="heart"></span> by <a href="https://dexignzone.com/">DexignZone</a></p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

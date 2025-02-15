@@ -9,6 +9,7 @@
         </div>
         @endif
     </div>
+    <div id="cart-message" style="display: none;"></div>
     <section class="content-inner-1 border-bottom">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
@@ -128,7 +129,7 @@
                                     </ul>
                                     <div class="d-flex">
                                     <div style="margin-right: 8px;">
-                                        <form action="/product/cart/{{$products->id}}" method="post">
+                                        <form id="add-to-cart-form" action="/product/cart/{{$products->id}}" method="post">
                                             @csrf
                                             <input type="hidden" name="product_id" value="{{$products->id}}">
                                             <input type="hidden" value="1" name="quantity">
@@ -180,7 +181,38 @@
             </div>
         </div>
     </section>
-    
+    <div id="cart-message"></div>
+
 </div>
+<script>
+$(document).ready(function() {
+    $('#add-to-cart-form').on('submit', function(e) {
+        e.preventDefault(); // Prevent the form from submitting the traditional way
+
+        var form = $(this);
+        var url = '/product/cart/' + form.find('input[name="product_id"]').val();
+        var formData = form.serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: formData,
+            success: function(response) {
+                if (response.success) {
+                    $('#cart-count').text(parseInt($('#cart-count').text()) + 1); // Increment cart count
+                    $('#cart-message').html('<div class="alert alert-success">' + response.message + '</div>'); // Show success message
+                } else {
+                    $('#cart-message').html('<div class="alert alert-warning">' + response.message + '</div>'); // Show warning message
+                }
+            },
+            error: function(xhr, status, error) {
+                $('#cart-message').html('<div class="alert alert-danger">An error occurred while adding the product to the cart.</div>'); // Show error message
+            }
+        });
+    });
+});
+</script>
+
+
 
 @endsection

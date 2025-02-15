@@ -24,12 +24,15 @@ class CartController extends Controller
 
   public function store(Request $request)
   {
-
+ 
     $userId = Auth::id();
     $productId = $request->product_id;
     $productInCart = cart::where('user_id', $userId)->where('product_id', $productId)->where('status',0)->first();
     if ($productInCart) {
-      return redirect('/shop')->with(['message' => 'product is already in cart']);
+      return response()->json([
+        'success' => false,
+        'message' => 'Product is already in cart'
+    ]);
     } else {
       cart::create([
         'user_id' => $userId,
@@ -37,7 +40,11 @@ class CartController extends Controller
         'quantity' => $request->quantity,
 
       ]);
-      return redirect('/shop')->with(['message' => 'product added successfully']);
+      return response()->json([
+        'success' => true,
+        'message' => 'Product added successfully',
+        
+    ]);
     }
   }
 }

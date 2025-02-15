@@ -73,4 +73,20 @@ class OrderController extends Controller
     }
     return redirect('/')->with('success', 'Order placed successfully.');
   }
+
+  public function orderaccept($id){
+    $order = Order::find($id);
+    if($order){
+    $order->update(['status' => 'Accepted']);
+    return redirect()->back()->with('success', 'Order accepted successfully!');
+    }
+  }
+
+  public function ordercancel($id){
+    $order = Order::find($id);
+    if($order){
+      $order->update(['status' => 'Canceled']);
+      return redirect()->back();
+    }
+  }
 }

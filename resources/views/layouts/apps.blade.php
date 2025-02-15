@@ -1,5 +1,6 @@
 <html>
     <head>
+      <title>BookLand</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('icons/flaticon/flaticon.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,18 +20,11 @@
     <body>
     @include('layouts.header')
     @yield('content')
-    <!-- <div id="loading-area" class="preloader-wrapper-1">
-			<div class="preloader-inner">
-				<div class="preloader-shade"></div>
-				<div class="preloader-wrap"></div>
-				<div class="preloader-wrap wrap2"></div>
-				<div class="preloader-wrap wrap3"></div>
-				<div class="preloader-wrap wrap4"></div>
-				<div class="preloader-wrap wrap5"></div>
-			</div> 
-		</div> -->
+ 
     @include('layouts.footer')
-    <script src="{{ asset('js/jquery.min.js') }}"></script><!-- JQUERY MIN JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script><!-- BOOTSTRAP MIN JS -->
     <script src="{{ asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script><!-- BOOTSTRAP SELECT MIN JS -->
     <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script><!-- SWIPER JS -->
@@ -43,7 +37,7 @@
     <script src="{{ asset('js/dz.ajax.js') }}"></script><!-- AJAX -->
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/live-search.js') }}"></script>
-   
-   
-    </body>
+    
+    
+   </body>
 </html>
