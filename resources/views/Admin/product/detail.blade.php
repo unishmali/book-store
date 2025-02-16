@@ -1,12 +1,17 @@
 <x-app-layout>
     <div  class=" px-12">
-    <div class="row book-grid-row style-4 pt-[6rem] ">
+	<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-500 dark:text-gray-200 leading-tight">
+            {{ __('Book Detail !') }}
+        </h2>
+    </x-slot>
+    <div class="row book-grid-row style-4  ">
 				<div class="col">
 					<div class="dz-box">
 						<div class="dz-media">
 							<img src="{{ asset($products->photo) }}" alt="book">
 						</div>
-						<div class="dz-content bg-white py-8 px-8 rounded-lg">
+						<div class="dz-content bg-white py-8 px-8 rounded-lg shadow-lg w-full">
 							
 							<div class="dz-body ">
 							<h3 class="text-2xl mt-2 font-bold ">{{$products->title}}</h3>

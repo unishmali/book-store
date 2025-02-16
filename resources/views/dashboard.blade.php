@@ -16,37 +16,39 @@
                             </div>
                         </div> -->
 
-                        <div class="col-md-6">
-                            <div class="card overflow-hidden">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="avatar-md bg-orange-300 rounded flex items-center justify-center">
-                                                <i class="fa fa-book text-slate-700 text-2xl  "></i>
+                        <div class="col-md-6  ">
+                            <a href="/product/index">
+                                <div class="card overflow-hidden hover:shadow-md">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="avatar-md bg-orange-300 rounded flex items-center justify-center">
+                                                    <i class="fa fa-book text-slate-700 text-2xl  "></i>
+                                                </div>
+                                            </div> <!-- end col -->
+                                            <div class="col-6 text-end">
+                                                <p class="text-muted mb-0 text-truncate">Total Books</p>
+                                                @php
+                                                $totalbooks = \App\Models\product::count();
+                                                @endphp
+                                                <h3 class="text-dark mt-1 mb-0">{{$totalbooks}}</h3>
+                                            </div> <!-- end col -->
+                                        </div> <!-- end row-->
+                                    </div> <!-- end card body -->
+                                    <div class="card-footer py-2 bg-light bg-opacity-50">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <span class="text-success"> <i class="bx bxs-up-arrow fs-12"></i> 2.3%</span>
+                                                <span class="text-muted ms-1 fs-12">Last Week</span>
                                             </div>
-                                        </div> <!-- end col -->
-                                        <div class="col-6 text-end">
-                                            <p class="text-muted mb-0 text-truncate">Total Books</p>
-                                            @php
-                                            $totalbooks = \App\Models\product::count();
-                                            @endphp
-                                            <h3 class="text-dark mt-1 mb-0">{{$totalbooks}}</h3>
-                                        </div> <!-- end col -->
-                                    </div> <!-- end row-->
-                                </div> <!-- end card body -->
-                                <div class="card-footer py-2 bg-light bg-opacity-50">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <span class="text-success"> <i class="bx bxs-up-arrow fs-12"></i> 2.3%</span>
-                                            <span class="text-muted ms-1 fs-12">Last Week</span>
+                                            <a href="/product/index" class="text-reset fw-semibold fs-12  hover:ease-in-out hover:scale-110 transition">View More</a>
                                         </div>
-                                        <a href="/product/index" class="text-reset fw-semibold fs-12">View More</a>
-                                    </div>
-                                </div> <!-- end card body -->
-                            </div> <!-- end card -->
+                                    </div> <!-- end card body -->
+                                </div>
+                            </a> <!-- end card -->
                         </div> <!-- end col -->
                         <div class="col-md-6">
-                            <div class="card overflow-hidden">
+                          <a href="/category/index" >  <div class="card overflow-hidden hover:shadow-md ">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
@@ -56,23 +58,24 @@
                                         </div> <!-- end col -->
                                         <div class="col-6 text-end">
                                             <p class="text-muted mb-0 text-truncate">Categories</p>
-                                            <h3 class="text-dark mt-1 mb-0">9, 526</h3>
+                                            @php
+                                            $totalCategory = \App\Models\category::count();
+                                            @endphp
+                                            <h3 class="text-dark mt-1 mb-0">{{$totalCategory }}</h3>
                                         </div> <!-- end col -->
                                     </div> <!-- end row-->
                                 </div> <!-- end card body -->
                                 <div class="card-footer py-2 bg-light bg-opacity-50">
                                     <div class="d-flex   align-items-center justify-content-between">
-                                        <div>
-                                            <span class="text-success"> <i class="bx bxs-up-arrow fs-12"></i> 8.1%</span>
-                                            <span class="text-muted ms-1 fs-12">Last Month</span>
-                                        </div>
-                                        <a href="/category/index" class="text-reset fw-semibold fs-12">View More</a>
+                                       
+                                        <a href="/category/index" class="text-reset fw-semibold fs-12 hover:ease-in-out hover:scale-110 transition">View More</a>
                                     </div>
                                 </div> <!-- end card body -->
                             </div> <!-- end card -->
+                          </a>
                         </div> <!-- end col -->
                         <div class="col-md-6">
-                            <div class="card overflow-hidden">
+                            <div class="card overflow-hidden hover:shadow-md">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
@@ -95,13 +98,13 @@
                                             <span class="text-danger"> <i class="bx bxs-down-arrow fs-12"></i> 0.3%</span>
                                             <span class="text-muted ms-1 fs-12">Last Month</span>
                                         </div>
-                                        <a href="#!" class="text-reset fw-semibold fs-12">View More</a>
+                                        <a href="#" class="text-reset fw-semibold fs-12  hover:ease-in-out hover:scale-110 transition">View More</a>
                                     </div>
                                 </div> <!-- end card body -->
                             </div> <!-- end card -->
                         </div> <!-- end col -->
                         <div class="col-md-6">
-                            <div class="card overflow-hidden">
+                            <div class="card overflow-hidden hover:shadow-md">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
@@ -110,8 +113,11 @@
                                             </div>
                                         </div> <!-- end col -->
                                         <div class="col-6 text-end">
-                                            <p class="text-muted mb-0 text-truncate">Order</p>
-                                            <h3 class="text-dark mt-1 mb-0">$123.6k</h3>
+                                            <p class="text-muted mb-0 text-truncate">Order Pending</p>
+                                            @php
+                                            $totalorders = \App\Models\Order::where('status','pending')->count();
+                                            @endphp
+                                            <h3 class="text-dark mt-1 mb-0">{{$totalorders}} </h3>
                                         </div> <!-- end col -->
                                     </div> <!-- end row-->
                                 </div> <!-- end card body -->
@@ -121,7 +127,7 @@
                                             <span class="text-danger"> <i class="bx bxs-down-arrow fs-12"></i> 10.6%</span>
                                             <span class="text-muted ms-1 fs-12">Last Month</span>
                                         </div>
-                                        <a href="#!" class="text-reset fw-semibold fs-12 hover:scale-110 scale-in-out">View More</a>
+                                        <a href="#order" class="text-reset fw-semibold fs-12  hover:ease-in-out hover:scale-110 transition">View More</a>
                                     </div>
                                 </div> <!-- end card body -->
                             </div> <!-- end card -->
@@ -309,7 +315,7 @@
                 </div> <!-- end col-->
             </div> <!-- end row -->
 
-            <div class="row">
+            <div id="order" class="row">
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
@@ -319,7 +325,7 @@
                                 </h4>
 
                                 <a href="#!" class="btn btn-sm btn-soft-primary">
-                                    <i class="bx bx-plus me-1"></i>Create Order
+                                    <i class="fa fa-eye me-1"></i>View All
                                 </a>
                             </div>
                         </div>
@@ -328,7 +334,7 @@
                             <table class="table mb-0">
                                 <thead class="bg-light bg-opacity-50">
                                     <tr>
-                                       
+
                                         <th>
                                             Date
                                         </th>
@@ -347,7 +353,7 @@
                                         <th>
                                             Address
                                         </th>
-                                        
+
                                         <th>
                                             Status
                                         </th>
@@ -364,14 +370,14 @@
                                         <td class="ps-3">
                                             <a href="order-detail.html">{{$group['order']->created_at->toFormattedDateString()}}</a>
                                         </td>
-                                       
-                                       
+
+
                                         <td>
-                                        @foreach($group['orderItems'] as $orderItem)
-                                            <img  src="{{asset($orderItem->cart->product->photo)}}" alt="product-1(1)" class="img-fluid avatar-sm">
+                                            @foreach($group['orderItems'] as $orderItem)
+                                            <img src="{{asset($orderItem->cart->product->photo)}}" alt="product-1(1)" class="img-fluid avatar-sm">
                                             @endforeach
                                         </td>
-                                       
+
                                         <td>
                                             <a href="#!">{{$group['order']->fname}}{{$group['order']->lname}}
                                             </a>
@@ -379,28 +385,28 @@
                                         <td>{{$group['order']->email}}</td>
                                         <td>{{$group['order']->phone}}</td>
                                         <td>{{$group['order']->address}}</td>
-                                       
+
                                         <td class="">
-                                          <span class=" {{ $group['order']->status  == 'Canceled' ? 'text-red-500' : 'text-green-700' }}"> {{$group['order']->status}}</span> 
+                                            <span class=" {{ $group['order']->status  == 'Canceled' ? 'text-red-500' : 'text-green-700' }}"> {{$group['order']->status}}</span>
                                         </td>
                                         <td>
-                                        <div class="d-flex gap-2">
-                                                    <a href="/order/accept/{{$group['order']->id}}" class="btn btn-light btn-sm hover:scale-110 transition hover:ease-in-out  hover:bg-green-300 duration-150  hover:shadow">Accept</a>
-                                                 <form action="" method="post"> 
-                                                 @method('delete')
-                                                    @csrf 
-                                                     <a href="/order/cancel/{{$group['order']->id}}" class="btn btn-soft-primary btn-sm hover:scale-110 transition hover:ease-in-out bg-red-500 hover:bg-red-600 duration-150 hover:shadow text-white">Cancel</a>
-                                                    </form>
-                                                    <a href="#!" class="btn btn-sm btn-soft-primary  ">
-                                    <i class="fa fa-eye mr-1 "></i>Detail
-                                </a>
-                                                </div>
+                                            <div class="d-flex gap-2">
+                                                <a href="/order/accept/{{$group['order']->id}}" class="btn btn-light btn-sm hover:scale-110 transition hover:ease-in-out  hover:bg-green-300 duration-150  hover:shadow">Accept</a>
+                                                <form action="" method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <a href="/order/cancel/{{$group['order']->id}}" class="btn btn-soft-primary btn-sm hover:scale-110 transition hover:ease-in-out bg-red-500 hover:bg-red-600 duration-150 hover:shadow text-white">Cancel</a>
+                                                </form>
+                                                <a href="#!" class="btn btn-sm btn-soft-primary  ">
+                                                    <i class="fa fa-eye mr-1 "></i>Detail
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                     @endforeach
 
                                     @endif
-                                    
+
 
 
                                 </tbody>

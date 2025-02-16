@@ -34,10 +34,10 @@
                                             </th>
                                             <th>Product Name & Size</th>
                                             <th>Price</th>
-                                            <th>Compare Price</th>
+                                            <th>Discount</th>
                                             <th>Category</th>
                                             <th>Author</th>
-                                            <th>Publication</th>
+                                            <th>Publisher</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -68,12 +68,12 @@
                                             </td>
                                             <td class="">${{$products->price}}.00</td>
                                             <td>
-                                                <p class="mb-1 text-muted"><span class="text-dark fw-medium">98 Item</span> Left</p>
+                                                <p class="mb-1 text-muted">{{$products->discount}}.00 %</p>
                                               
                                             </td>
                                             <td> {{$products->category->title}}</td>
                                             <td>{{$products->author}}</td>
-                                            <td> <span class="badge p-1 bg-light text-dark fs-12 me-1"><i class="bx bxs-star align-text-top fs-14 text-warning me-1"></i> 3.4</span> 201 Review</td>
+                                            <td> <span class="badge p-1 bg-light text-black fs-12 me-1"><i class="bx bxs-star align-text-top fs-14 text-slate-700 me-1">{{$products->publisher}}</td>
                                             <td>
                                                 <div class="d-flex gap-2">
                                                     <a href="/product/edit/{{$products->id}}" class="btn btn-light btn-sm hover:scale-110 transition hover:ease-in-out duration-150  hover:shadow"><i class="fa fa-pen"></i></a>
