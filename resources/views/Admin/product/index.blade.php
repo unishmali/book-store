@@ -1,4 +1,11 @@
 <x-app-layout>
+    <div>
+         @if(session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+        @endif
+    </div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-500 dark:text-gray-200 leading-tight">
             {{ __('Product List') }}
@@ -13,10 +20,10 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center gap-1">
-                            <h4 class="card-title flex-grow-1">All Product List</h4>
+                            <h4 class="card-title flex-grow-1">All Book List</h4>
 
                             <a href="/product" class="btn btn-sm btn-primary">
-                                Add Product
+                                Add Books
                             </a>
 
 

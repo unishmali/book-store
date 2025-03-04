@@ -31,7 +31,7 @@ Route::get('/about', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/shop',[ShopController::class,'shoplist']);
+Route::get('/shop',[ShopController::class,'shoplist'])->name('shop');
 Route::get('/shop/sidebar',[ShopController::class,'sidebar']);
 
 Route::get('/search', [ShopController::class, 'shoplist']);
@@ -109,6 +109,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/product/cart/{id}',[CartController::class,'store']);
 
     Route::get('/cart',[CartController::class,'cart']);
+    Route::delete('/cart/delete/{id}',[CartController::class,'destroy']);
 
     Route::get('/checkout',[OrderController::class,'checkout']);
     Route::get('/wishlist',[WishlistController::class,'wishlist']);

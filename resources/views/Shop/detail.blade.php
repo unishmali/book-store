@@ -1,6 +1,13 @@
 @extends('layouts.apps')
 @section('content')
 <div class="page-content bg-grey ">
+	<div>
+		@if(session('message'))
+		<div class="alert alert-success">
+			{{ session('message') }}
+		</div>
+		@endif
+	</div>
 	<section class="content-inner-1">
 		<div class="container">
 			<div class="row book-grid-row style-4 m-b60">
@@ -11,24 +18,24 @@
 						</div>
 						<div class="dz-content">
 							<div class="dz-header">
-								<h3 class="title">Think and Grow Rich</h3>
+								<h3 class="title">{{$product->title}}</h3>
 								<div class="shop-item-rating">
 									<div class="d-lg-flex d-sm-inline-flex d-flex align-items-center">
-										<ul class="dz-rating">
+										<!-- <ul class="dz-rating">
 											<li><i class="flaticon-star text-yellow"></i></li>
 											<li><i class="flaticon-star text-yellow"></i></li>
 											<li><i class="flaticon-star text-yellow"></i></li>
 											<li><i class="flaticon-star text-yellow"></i></li>
 											<li><i class="flaticon-star text-muted"></i></li>
 										</ul>
-										<h6 class="m-b0">4.0</h6>
+										<h6 class="m-b0">4.0</h6> -->
 									</div>
 									<div class="social-area">
 										<ul class="dz-social-icon style-3">
-											<li><a href="https://www.facebook.com/dexignzone" target="_blank"><i class="fa-brands fa-facebook-f" style="padding: 6px;"></i></a></li>
-											<li><a href="https://twitter.com/dexignzones" target="_blank"><i class="fa-brands fa-twitter" style="padding: 6px;"></i></a></li>
-											<li><a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp" style="padding: 6px;"></i></a></li>
-											<li><a href="https://www.google.com/intl/en-GB/gmail/about/" target="_blank"><i class="fa-solid fa-envelope" style="padding: 6px;"></i></a></li>
+											<li><a href="" target="_blank"><i class="fa-brands fa-facebook-f" style="padding: 6px;"></i></a></li>
+											<li><a href="" target="_blank"><i class="fa-brands fa-twitter" style="padding: 6px;"></i></a></li>
+											<li><a href="" target="_blank"><i class="fa-brands fa-whatsapp" style="padding: 6px;"></i></a></li>
+											<li><a href="" target="_blank"><i class="fa-solid fa-envelope" style="padding: 6px;"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -38,47 +45,47 @@
 									<ul class="book-info">
 										<li>
 											<div class="writer-info">
-												<img src="images/profile2.jpg" alt="author">
+												<img src="{{ asset('images/profile1.jpg') }}" alt="author">
 												<div>
 													<span>Writen by</span>{{$product->author}}
 												</div>
 											</div>
 										</li>
-										<li><span>Publisher</span>Printarea Studios</li>
+										<li><span>Publisher</span>{{$product->publisher}}</li>
 										<li><span>Year</span>2019</li>
 									</ul>
 								</div>
-								<p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+								<p class="text-1">{!! $product->description !!}</p>
 								<p class="text-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem</p>
 								<div class="book-footer">
 									<div class="price">
-										<h5>$54.78</h5>
-										<p class="p-lr10">$70.00</p>
+										<h5>${{ ($product->price)-($product->discount/100*$product->price)}}</h5>
+										<p class="p-lr10">${{$product->price}}.00</p>
 									</div>
 
-									<div class="product-num" >
+									<div class="product-num">
 										<div>
-										<form action="/product/cart/{{$product->id}}" method="post">
-										@csrf
-											<div class="quantity btn-quantity style-1 me-3">
+											<form action="/product/cart/{{$product->id}}" method="post">
+												@csrf
+												<div class="quantity btn-quantity style-1 me-3">
 
-												
-												<input type="hidden" name="product_id" value="{{$product->id}}">
 
-												<input id="counter" type="number" value="1" min="1" name="quantity" style="width: 100px;  margin-right:8px; padding:4px; " />
-												<button type="submit" style="margin-bottom: 12px;" class="btn btn-primary btnhover btnhover2"><i class="flaticon-shopping-cart-1" style="padding:3px;"></i> <span>Add to cart</span></button>
-											</div>
-											
-										</form>
+													<input type="hidden" name="product_id" value="{{$product->id}}">
+
+													<input id="counter" type="number" value="1" min="1" name="quantity" style="width: 100px;  margin-right:8px; padding:4px; " />
+													<button type="submit" style="margin-bottom: 12px;" class="btn btn-primary btnhover btnhover2"><i class="fas fa-shopping-cart m-r10" style="padding:3px;"></i> <span>Add to cart</span></button>
+												</div>
+
+											</form>
 										</div>
 										<div class="bookmark-btn style-1 d-none d-sm-block" style="margin-bottom: 12px;">
 											<form action="/wishlist/{{$product->id}}" method="post">
 												@csrf
 												<input type="hidden" name="product_id" value="{{$product->id}}">
-												<button type="submit" style="background-color:white; border-radius:4px; padding:6px; border-color:grey"> 
-											
-													<i class="flaticon-heart" style="padding: 6px;"></i>
-												
+												<button type="submit" style="background-color:white; border-radius:4px; padding:6px; border-color:grey">
+
+													<i class="fa fa-heart" style="padding: 6px;"></i>
+
 												</button>
 											</form>
 										</div>
@@ -103,39 +110,36 @@
 								<table class="table border book-overview">
 									<tr>
 										<th>Book Title</th>
-										<td>Think and Grow Rich</td>
+										<td>{{$product->title}}</td>
 									</tr>
 									<tr>
 										<th>Author</th>
-										<td>Napoleon Rich</td>
+										<td>{{$product->author}}</td>
 									</tr>
 									<tr>
 										<th>ISBN</th>
-										<td>121341381648 (ISBN13: 121341381648)</td>
+										<td> ISBN13: {{$product->isbn}}</td>
 									</tr>
 									<tr>
 										<th>Ediiton Language</th>
-										<td>English</td>
+										<td>{{$product->language}}</td>
 									</tr>
 									<tr>
 										<th>Book Format</th>
-										<td>Paperback, 450 Pages</td>
+										<td> {{$product->pages}} Pages</td>
 									</tr>
 									<tr>
 										<th>Date Published</th>
-										<td>August 10th 2019</td>
+										<td>{{$product->datepublish}}</td>
 									</tr>
 									<tr>
 										<th>Publisher</th>
-										<td>Wepress Inc.</td>
+										<td>{{$product->publisher}}</td>
 									</tr>
-									<tr>
-										<th>Pages</th>
-										<td>520</td>
-									</tr>
+
 									<tr>
 										<th>Lesson</th>
-										<td>7</td>
+										<td>{{$product->lesson}}</td>
 									</tr>
 									<tr>
 										<th>Topic</th>

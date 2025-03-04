@@ -21,7 +21,7 @@ class WishlistController extends Controller
         $productId = $request->product_id;
         $productInCart = wishlist::where('user_id', $userId)->where('product_id', $productId)->first();
         if ($productInCart) {
-            return redirect('/shop')->with(['message' => 'product is already exist in wishlist']);
+            return  back()->with(['message' => 'product is already exist in wishlist']);
         } else {
             wishlist::create([
                 'user_id' => $userId,
@@ -29,7 +29,7 @@ class WishlistController extends Controller
 
 
             ]);
-            return redirect('/shop')->with(['message' => 'product added successfully']);
+            return back()->with(['message' => 'product added successfully to your wishlist']);
         }
     }
 }

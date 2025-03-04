@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Models\cart;
 
 class ProductController extends Controller
 {
@@ -51,6 +52,13 @@ public function update(Request $request,$id){
 }
 public function destroy ($id){
     $product = product::find($id);
+
+    $cartItemExist = cart::where('product_id', $id)->exists();
+
+    if ($cartItemExist){
+        return back()->with('message','product is exist on customer cart cart');
+    }
+
     Storage::disk('public')->delete('images/' . $product->getRawOriginal('photo'));
     $product->destroy($id);
     return redirect('/product/index');

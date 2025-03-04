@@ -29,10 +29,7 @@ class CartController extends Controller
     $productId = $request->product_id;
     $productInCart = cart::where('user_id', $userId)->where('product_id', $productId)->where('status',0)->first();
     if ($productInCart) {
-      return response()->json([
-        'success' => false,
-        'message' => 'Product is already in cart'
-    ]);
+      return back()->with('message','Book is already available in your Cart');
     } else {
       cart::create([
         'user_id' => $userId,
@@ -40,11 +37,13 @@ class CartController extends Controller
         'quantity' => $request->quantity,
 
       ]);
-      return response()->json([
-        'success' => true,
-        'message' => 'Product added successfully',
-        
-    ]);
+      return back()->with('message','Book has been added to your cart');
     }
+  }
+
+  public function destroy($id){
+    $cart =  Cart::find($id);
+   $cart->destroy($id);
+   return redirect('/cart')->with('message','Book Has Been Deleted With Your Cart');
   }
 }

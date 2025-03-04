@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('lesson');
             $table->date('datepublish');
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->enum('status',['OnStock','OutofStock'])->default('OnStock');
             $table->timestamps();
         });
     }

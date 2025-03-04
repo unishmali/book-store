@@ -1,6 +1,11 @@
 @extends('layouts.apps')
 @section('content')
 <!-- contact area -->
+@if(session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+        @endif
 <section class="content-inner shop-account">
 	<!-- Product -->
 	<div class="container">
@@ -11,28 +16,39 @@
 						<thead>
 							<tr>
 								<th>Product</th>
-								<th>Product name</th>
+								<th>Book name</th>
 								<th>Unit Price</th>
 								<th>Quantity</th>
 								<th>Total</th>
 								<th class="text-end">Close</th>
+								<th class="text-end">Edit</th>
 							</tr>
 						</thead>
 						<tbody>
-							
+
 							@foreach($cartItem as $cartItems)
 							<tr>
-							
+
 								<td class="product-item-img"><img src="{{  asset($cartItems->product->photo)}}" alt=""></td>
 								<td class="product-item-name">{{$cartItems->product->title}}</td>
 								<td class="product-item-price">${{$cartItems->product->price}}.00</td>
 								<td class="product-item-quantity">
-									<div class="quantity btn-quantity style-1 me-3">
-										<input id="demo_vertical2" type="number" value="{{$cartItems->quantity}}" name="demo_vertical2" />
-									</div>
+								{{$cartItems->quantity}} pcs
 								</td>
 								<td class="product-item-totle">${{($cartItems->product->price)*($cartItems->quantity)}}.00</td>
-								<td class="product-item-close"><button style="background: transparent; border:none;"><a href="" class="ti-close"><i class="fa fa-close" style="padding-right: 8px;"></i></a></button></td>
+								<td class="product-item-close">
+									<form action="/cart/delete/{{$cartItems->id}}" method="post"> 
+									@method('delete')
+										@csrf
+										<button style="background: transparent; border:none;" type="submit"><a  class="ti-close"><i class="fa fa-close" style="padding-right: 9ppx;"></i></a></button></form>
+								</td>
+								<td class="product-item-close">
+									<form action="/cart/edit/{{$cartItems->id}}" method="post"> 
+									@method('patch')
+										@csrf
+										
+										<button style=" border:none;" type="submit"><a href="/cart/" class="ti-close"><i class="fa fa-pen" style="padding-right: 8px; "></i></a></button></form>
+								</td>
 
 
 
@@ -40,11 +56,11 @@
 
 
 							</tr>
-							
+
 
 						</tbody>
 						@endforeach
-							
+
 					</table>
 				</div>
 			</div>
@@ -112,6 +128,9 @@
 	</div>
 	<!-- Product END -->
 </section>
+<script>
+
+</script>
 <!-- contact area End-->
 
 @endsection

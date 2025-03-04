@@ -12,10 +12,18 @@ class ShopController extends Controller
         $category = category::get();
 
         $searchQuery = $request->input('query');
-        $product = Product::with('category') ;
+        $categorySlug = $request->input('category');
+        $product = Product::latest() ;
 
         if ($searchQuery) {
             $product = $product->where('title', 'LIKE', '%' . $searchQuery . '%') ->orWhere('author', 'LIKE', '%' . $searchQuery . '%');
+        }
+      
+        if ($categorySlug) {
+            $categoryData = Category::where('slug', $categorySlug)->first();
+            if ($categoryData) {
+                $product->where('category_id', $categoryData->id);
+            }
         }
         
         $product =  $product->get();

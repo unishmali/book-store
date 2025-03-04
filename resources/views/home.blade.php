@@ -238,9 +238,9 @@
 						@foreach($recommend as $recommends)
 						<div class="swiper-slide">
 							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.1s">
-								<div class="dz-media ">
+							<a href="/product/detail/{{$recommends->slug}}"><div class="dz-media ">
 									<img src="{{$recommends->photo}}" alt="book">
-								</div>
+								</div></a>
 								<div class="dz-content">
 									<h4 class="title">{{$recommends->title}}</h4>
 									<span class="price">${{$recommends->price}}</span>
@@ -254,6 +254,7 @@
 								</div>
 							</div>
 						</div>
+						
 						@endforeach
 
 
